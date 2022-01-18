@@ -5,8 +5,9 @@ const BOOTSTRAP_FOR_SKILL_ICON = "text-4xl mx-auto inline-block";
 const data = {
   name: "Nilesh Aggarwal",
   title: "Developer/Software Engineer",
+  url: "https://drive.google.com/file/d/1meomFKW9PzFeUHr-lbH-Xjdo7tA8NvcF/view?usp=sharing",
   social: {
-    github: "https://github.com/BraydenTW",
+    github: "https://github.com/nil3sh99",
     linkedin: "https://www.linkedin.com/in/nilesh-dev/",
     email: "agnilesh8199@gmail.com",
   },
