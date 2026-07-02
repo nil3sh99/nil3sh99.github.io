@@ -66,13 +66,70 @@
   ::-webkit-scrollbar-thumb:hover { background: rgba(99, 102, 241, 0.55); }
 }
 
-/* ─── Modal animations ─────────────────────────────────── */
-@keyframes overlayIn  { from { opacity: 0; }                                        to { opacity: 1; }              }
-@keyframes overlayOut { from { opacity: 1; }                                        to { opacity: 0; }              }
-@keyframes modalIn    { from { opacity: 0; transform: translateY(28px) scale(.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
-@keyframes modalOut   { from { opacity: 1; transform: translateY(0) scale(1); }      to { opacity: 0; transform: translateY(28px) scale(.97); } }
 
-.overlay-enter  { animation: overlayIn  0.25s ease-out forwards; }
-.overlay-exit   { animation: overlayOut 0.2s  ease-in  forwards; }
-.modal-enter    { animation: modalIn    0.3s  cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
-.modal-exit     { animation: modalOut   0.2s  ease-in  forwards; }
+/* ─── Drawer (side panel on desktop, bottom sheet on mobile) ─────────── */
+
+/* Overlay backdrop */
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Drawer panel — shared base */
+.drawer-panel {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  background: #0f0f1e;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+
+  /* Mobile: bottom sheet — full width, max 85vh, rounded top corners */
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 85vh;
+  border-radius: 20px 20px 0 0;
+}
+
+/* Desktop: side drawer — right edge, full height, fixed width */
+@media (min-width: 640px) {
+  .drawer-panel {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: auto;
+    width: 440px;
+    max-height: 100vh;
+    border-radius: 0;
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+  }
+}
+
+/* ── Keyframes ── */
+@keyframes overlayIn    { from { opacity: 0; }                        to { opacity: 1; } }
+@keyframes overlayOut   { from { opacity: 1; }                        to { opacity: 0; } }
+@keyframes sheetUp      { from { transform: translateY(100%); }       to { transform: translateY(0); } }
+@keyframes sheetDown    { from { transform: translateY(0); }          to { transform: translateY(100%); } }
+@keyframes slideInRight { from { transform: translateX(100%); }       to { transform: translateX(0); } }
+@keyframes slideOutRight{ from { transform: translateX(0); }          to { transform: translateX(100%); } }
+
+/* Overlay enter/exit */
+.drawer-overlay-enter { animation: overlayIn  0.25s ease-out forwards; }
+.drawer-overlay-exit  { animation: overlayOut 0.28s ease-in  forwards; }
+
+/* Panel enter/exit — mobile (bottom sheet) */
+.drawer-panel-enter { animation: sheetUp   0.32s cubic-bezier(0.32, 0.72, 0, 1) forwards; }
+.drawer-panel-exit  { animation: sheetDown 0.28s ease-in forwards; }
+
+/* Panel enter/exit — desktop (side drawer) */
+@media (min-width: 640px) {
+  .drawer-panel-enter { animation: slideInRight  0.32s cubic-bezier(0.32, 0.72, 0, 1) forwards; }
+  .drawer-panel-exit  { animation: slideOutRight 0.28s ease-in forwards; }
+}
+

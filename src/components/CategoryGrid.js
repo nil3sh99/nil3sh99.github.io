@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Modal from "./Modal";
+import Drawer from "./Drawer";
 
 /** The glow class maps a category id to a CSS class defined in index.css */
 const GLOW = {
@@ -9,6 +9,7 @@ const GLOW = {
   security: "card-glow-security",
   projects: "card-glow-projects",
 };
+
 
 const CategoryCard = ({ category, onClick }) => (
   <div
@@ -45,23 +46,23 @@ const CategoryGrid = ({ categories }) => {
   const [selected, setSelected] = useState(null);
 
   return (
-    <section className="px-6 py-16">
+    <section className="px-4 sm:px-6 py-12 sm:py-16">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-12">
           <p className="text-xs font-bold tracking-widest text-indigo-400 uppercase mb-3">
             Domain Expertise
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
             What I Build
           </h2>
           <p className="text-gray-400 mt-4 max-w-lg mx-auto text-sm leading-relaxed">
-            Click any domain to explore the real-world systems and platforms I've
+            Tap any domain to explore the real-world systems and platforms I've
             engineered across companies.
           </p>
         </div>
 
-        {/* Cards — flex wrap centres the bottom row automatically */}
+        {/* Cards grid */}
         <div className="flex flex-wrap justify-center gap-5">
           {categories.map((cat) => (
             <div
@@ -74,12 +75,13 @@ const CategoryGrid = ({ categories }) => {
         </div>
       </div>
 
-      {/* Modal portal — rendered outside the grid container */}
+      {/* Side drawer — rendered via portal to document.body */}
       {selected && (
-        <Modal category={selected} onClose={() => setSelected(null)} />
+        <Drawer category={selected} onClose={() => setSelected(null)} />
       )}
     </section>
   );
 };
 
 export default CategoryGrid;
+

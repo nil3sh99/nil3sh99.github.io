@@ -53,19 +53,19 @@ const AnimatedNumber = ({ number, prefix = "", suffix = "" }) => {
 
 const ImpactStats = ({ stats }) => {
   return (
-    <section className="px-6 py-12">
+    <section className="px-4 sm:px-6 py-10 sm:py-12">
       <div className="max-w-6xl mx-auto">
-        <div className="glass-card rounded-2xl px-8 py-10">
+        <div className="glass-card rounded-2xl px-5 sm:px-8 py-8 sm:py-10">
           <p className="text-center text-xs font-bold tracking-widest text-indigo-400 uppercase mb-8">
             Impact by the Numbers
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-y-8 gap-x-4 divide-y sm:divide-y-0 sm:divide-x divide-white/5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-y-8 sm:gap-x-4">
             {stats.map((stat, i) => (
               <div
                 key={i}
-                className="text-center px-4 pt-6 sm:pt-0 first:pt-0"
+                className="text-center px-2 sm:px-4"
               >
-                <div className="text-3xl md:text-4xl font-extrabold gradient-text">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold gradient-text">
                   <AnimatedNumber
                     number={stat.number}
                     prefix={stat.prefix}

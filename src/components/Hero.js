@@ -5,7 +5,7 @@ import profile from "../images/pp_nilesh.jpg";
 
 const Hero = ({ name, title, tagline, social, resumeUrl }) => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-6 py-20 overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 py-16 sm:py-20 overflow-hidden">
       {/* Background: dot grid + radial gradient */}
       <div className="absolute inset-0 dot-pattern" />
       <div className="absolute inset-0 hero-gradient" />
@@ -28,7 +28,7 @@ const Hero = ({ name, title, tagline, social, resumeUrl }) => {
         </div>
 
         {/* Name */}
-        <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight mb-4 leading-none">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 leading-none">
           <span className="gradient-text">{name}</span>
         </h1>
 
@@ -46,17 +46,17 @@ const Hero = ({ name, title, tagline, social, resumeUrl }) => {
         </div>
 
         {/* Tagline */}
-        <p className="text-base sm:text-lg text-gray-400 leading-relaxed mb-10 max-w-2xl">
+        <p className="text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed mb-8 sm:mb-10 max-w-2xl px-2 sm:px-0">
           {tagline}
         </p>
 
         {/* CTA buttons */}
-        <div className="flex flex-wrap justify-center gap-3">
+        <div className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-2 sm:gap-3 w-full sm:w-auto">
           <a
             href={social.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-5 py-2.5 glass-card text-gray-300 hover:text-white hover:border-white/20 hover:bg-white/10 rounded-xl transition-all duration-200 text-sm font-medium"
+            className="flex items-center justify-center gap-2 px-4 py-2.5 glass-card text-gray-300 hover:text-white hover:border-white/20 hover:bg-white/10 rounded-xl transition-all duration-200 text-sm font-medium"
           >
             <FaGithub className="text-lg" />
             GitHub
@@ -65,14 +65,14 @@ const Hero = ({ name, title, tagline, social, resumeUrl }) => {
             href={social.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-5 py-2.5 glass-card text-gray-300 hover:text-blue-300 hover:border-blue-400/30 hover:bg-blue-500/10 rounded-xl transition-all duration-200 text-sm font-medium"
+            className="flex items-center justify-center gap-2 px-4 py-2.5 glass-card text-gray-300 hover:text-blue-300 hover:border-blue-400/30 hover:bg-blue-500/10 rounded-xl transition-all duration-200 text-sm font-medium"
           >
             <FaLinkedin className="text-lg text-blue-400" />
             LinkedIn
           </a>
           <a
             href={`mailto:${social.email}`}
-            className="flex items-center gap-2 px-5 py-2.5 glass-card text-gray-300 hover:text-teal-300 hover:border-teal-400/30 hover:bg-teal-500/10 rounded-xl transition-all duration-200 text-sm font-medium"
+            className="flex items-center justify-center gap-2 px-4 py-2.5 glass-card text-gray-300 hover:text-teal-300 hover:border-teal-400/30 hover:bg-teal-500/10 rounded-xl transition-all duration-200 text-sm font-medium"
           >
             <FiMail className="text-lg text-teal-400" />
             Email Me
@@ -81,7 +81,7 @@ const Hero = ({ name, title, tagline, social, resumeUrl }) => {
             href={resumeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl transition-colors duration-200 text-sm font-semibold shadow-lg shadow-indigo-600/30"
+            className="flex items-center justify-center gap-2 px-4 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl transition-colors duration-200 text-sm font-semibold shadow-lg shadow-indigo-600/30"
           >
             <FiDownload className="text-lg" />
             Resume

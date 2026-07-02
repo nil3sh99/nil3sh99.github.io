@@ -5,20 +5,20 @@ const TechStack = ({ techStack }) => {
   const categories = [...new Set(techStack.map((t) => t.category))];
 
   return (
-    <section className="px-6 py-16">
+    <section className="px-4 sm:px-6 py-12 sm:py-16">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <p className="text-xs font-bold tracking-widest text-indigo-400 uppercase mb-3">
             Tools &amp; Technologies
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white">Tech Stack</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">Tech Stack</h2>
         </div>
 
         <div className="space-y-5">
           {categories.map((cat) => (
-            <div key={cat} className="flex flex-wrap items-start gap-3">
+            <div key={cat} className="flex flex-col sm:flex-row sm:flex-wrap sm:items-start gap-2 sm:gap-3">
               {/* Category label */}
-              <span className="text-xs text-gray-500 font-bold uppercase tracking-widest w-24 flex-shrink-0 mt-2">
+              <span className="text-xs text-gray-500 font-bold uppercase tracking-widest w-full sm:w-24 flex-shrink-0 sm:mt-2">
                 {cat}
               </span>
 

@@ -16,13 +16,13 @@ const TimelineEntry = ({ job, isLast }) => (
 
     {/* Card */}
     <div className="glass-card rounded-2xl p-5 hover:bg-white/10 transition-colors duration-200">
-      <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
+      <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-start sm:justify-between gap-1 sm:gap-3 mb-4">
         <div>
           <h3 className="text-base font-bold text-white leading-snug">{job.role}</h3>
           <p className="text-indigo-300 text-sm font-medium">{job.company}</p>
           <p className="text-gray-500 text-xs mt-0.5">{job.location}</p>
         </div>
-        <div className="text-right flex-shrink-0">
+        <div className="sm:text-right flex-shrink-0">
           <span className="text-xs text-gray-400 block">{job.period}</span>
           <span
             className={`text-xs px-2 py-0.5 mt-1.5 rounded-full inline-block font-medium ${
@@ -49,13 +49,13 @@ const TimelineEntry = ({ job, isLast }) => (
 );
 
 const Timeline = ({ experience }) => (
-  <section className="px-6 py-16">
+  <section className="px-4 sm:px-6 py-12 sm:py-16">
     <div className="max-w-3xl mx-auto">
       <div className="text-center mb-12">
         <p className="text-xs font-bold tracking-widest text-indigo-400 uppercase mb-3">
           Work History
         </p>
-        <h2 className="text-4xl md:text-5xl font-bold text-white">My Journey</h2>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">My Journey</h2>
       </div>
 
       <div>
