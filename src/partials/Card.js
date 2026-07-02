@@ -1,5 +1,5 @@
 import React from "react";
-import profile from "../images/profile-img.webp";
+import profile from "../images/pp_nilesh.jpg";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaRegEnvelope } from "react-icons/fa";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FiMail, FiDownload } from "react-icons/fi";
-import profile from "../images/profile-img.webp";
+import profile from "../images/pp_nilesh.jpg";
 
 const Hero = ({ name, title, tagline, social, resumeUrl }) => {
   return (
